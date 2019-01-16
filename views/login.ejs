@@ -1,0 +1,52 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KHKCMS - login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/layout/admin/css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="/layout/admin/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/layout/admin/js/materialize.min.js"></script>
+</head>
+
+<style>
+
+ .container{
+     width: auto;
+     max-width: 300px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+     text-align: center;
+ }
+
+</style>
+
+<body>
+    <div class="container">
+        <form method="POST" action="/admin/login">
+
+            <div class="input-field">
+                <input name="username" type="text">
+                <label>Email</label>
+            </div>
+            <div class="input-field">
+                <input name="password" type="password">
+                <label>Password</label>
+            </div>
+            <button type="submit" class="btn-flat blue lighten-1 waves-effect waves-light white-text">Log in</button>
+        
+        </form>
+    </div>
+
+    <script>
+    
+        <%- include partials/messages %>
+    
+    </script>
+
+</body>
+</html>

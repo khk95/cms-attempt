@@ -1,0 +1,52 @@
+<div id="modal-add" class="modal">
+    <div class="modal-content">
+        <h5>Create new account</h5>
+        <form class="form-add-user" method="POST" action="/admin/add-user">
+            <div class="input-field">
+                <input pattern="^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ '-]+$" name="firstname" type="text" class="" required>
+                <label>First Name</label>
+            </div>
+            <div class="input-field">
+                <input pattern="^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ '-]+$" name="surname" type="text" class="" required>
+                <label>Surname</label>
+            </div>
+            <div class="input-field">
+                <input pattern="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$" name="email" type="text" class="" required>
+                <label>Email</label>
+            </div>
+            <div class="input-field">
+                <input pattern="^[a-zA-Z0-9@*#]+$" name="password" type="password" class="" required>
+                <label>Password</label>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="create-user waves-effect waves-green blue lighten-1 white-text btn-flat">Create account</button>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Dismiss</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+        $('.menu-collapsible').collapsible();
+        $('#modal-add').modal({
+            onCloseEnd: function(){
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
+        });
+        $('select').formSelect();
+
+        if (location.hash == '#modal-add'){
+            $('#modal-add').modal('open');
+        };
+
+        $(window).on('hashchange', function(){
+            if (location.hash == '#modal-add'){
+                $('#modal-add').modal('open');
+            };
+        });
+    });
+
+
+</script>

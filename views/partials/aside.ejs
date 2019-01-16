@@ -1,0 +1,29 @@
+<div class="admin__aside col s2">
+    <div class="admin__profile">
+        <img src="https://paese.com/public/assets/facechart_look3.jpg">
+        <h5>Hello, <span class="fw-medium"><%= user.firstname %>&nbsp;<%= user.surname %></span></h5>
+    </div>
+    <ul class="menu-collapsible collapsible">
+        <li>
+            <div class="collapsible-header waves-effect"><i class="material-icons">content_copy</i>Pages</div>
+            <div class="collapsible-body">
+                <a class="btn waves-effect" href="javascript:;">All</a>
+                <a class="btn waves-effect" href="javascript:;">Add new</a>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header waves-effect"><i class="material-icons">message</i>Enquiries</div>
+            <div class="collapsible-body">
+                <a class="btn waves-effect" href="javascript:;">All</a>
+                <a class="btn waves-effect" href="javascript:;">Unreaded</a>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header waves-effect"><i class="material-icons">person</i>Users</div>
+            <div class="collapsible-body">
+                <a class="btn waves-effect" href="/admin/users">All</a>
+                <a class="btn waves-effect" href="#modal-add">Add new</a>
+            </div>
+        </li>
+    </ul>
+</div>

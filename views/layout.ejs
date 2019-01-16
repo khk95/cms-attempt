@@ -1,0 +1,41 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page title here...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/layout/admin/css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="/layout/admin/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/layout/admin/js/materialize.min.js"></script>
+</head>
+<body>
+
+    <div class="admin row">
+        <div class="admin__bar col s12">
+            <h5 class="brand"><a href="/admin"><span class="fw-medium">KHK</span>CMS</a></h5>
+            <div class="admin__options">
+                <a class='dropdown-trigger btn-flat' href='#' data-target='dropdown1'>
+                    <img src="https://paese.com/public/assets/facechart_look3.jpg">
+                    <i class="material-icons">arrow_drop_down</i>
+                </a>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#!">Profile</a></li>
+                    <li><a href="/admin/logout">Log out</a></li>
+                </ul>                  
+            </div>
+        </div>
+        <%- include partials/aside %>
+        <div class="admin__main col s10">
+            <%- body %>
+        </div>
+    </div>
+    <%- include partials/modal-add-user %>
+
+    <script>
+        <%- include partials/messages %>
+        $('.dropdown-trigger').dropdown();
+    </script>
+</body>
+</html>

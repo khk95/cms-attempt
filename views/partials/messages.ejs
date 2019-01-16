@@ -1,0 +1,14 @@
+<% if(typeof errors != 'undefined'){ %>
+<% errors.forEach(function(error) { %>
+    M.toast({html: '<%= error.msg %>', classes: 'red darken-1'});
+<% }); %>
+<% } %>
+<% if(success_msg != ''){ %>
+    M.toast({html: '<%= success_msg %>', classes: 'green darken-1'});
+<% } %>
+<% if(error_msg != ''){ %>
+    M.toast({html: '<%= error_msg %>', classes: 'red darken-1'});
+<% } %>
+<% if(error != ''){ %>
+    M.toast({html: '<%= error %>', classes: 'red darken-1'});
+<% } %>

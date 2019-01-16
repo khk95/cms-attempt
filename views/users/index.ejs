@@ -1,0 +1,61 @@
+<div class="admin__header">
+    <h4>Users</h4>
+    <a class="waves-effect blue lighten-1 waves-light btn-flat white-text modal-trigger" href="#modal-add"><i class="material-icons left">add</i>Add user</a>
+</div>
+
+<div class="admin__userlist">
+    <table class="striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Firstname</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(function(user){ %>
+            <tr>
+                <td><img src="https://paese.com/public/assets/facechart_look3.jpg" alt=""></td>
+                <td><%= user.firstname %></td>
+                <td><%= user.surname %></td>
+                <td><%= user.email %></td>
+                <td>
+                    <a class="btn-flat blue lighten-1 waves-effect waves-light white-text" href="/admin/profile/<%= user._id %>">edit</a>
+                    <a class="delete-user btn-flat red darken-1 waves-effect waves-light white-text" href="javascript:;" id="<%= user._id %>">delete</a>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<div id="modal-delete" class="modal">
+    <div class="modal-content center-align">
+        <h5>Are you sure?</h5>
+        <a class="delete-account btn-flat blue lighten-1 waves-effect waves-light white-text" href="javascript:;">Yes, delete this account</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">No, dismiss</a>
+    </div>
+</div>
+
+<script>
+
+    $(function(){
+
+        $('#modal-delete').modal();
+        $('.delete-user').on('click', function(){
+            var id = $(this).attr('id');
+            M.Modal.getInstance($('#modal-delete')).open();
+            $('.delete-account').on('click', function(){
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/admin/user-delete/' + id,
+                });
+                location.reload();
+            });
+        });
+
+    });
+
+</script>
